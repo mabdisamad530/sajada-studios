@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sajda Studio – Personalised Prayer Mats</title>
+<meta name="description" content="Handcrafted personalised memory foam prayer mats, embroidered with your name. Luxury gift boxes. Ships worldwide. Muslim-owned, Minneapolis MN.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;500;600&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9A84C;--gold-lt:#E8C97A;--gold-dk:#8B6914;--deep:#0D0A0B;--surf:#1C1714;--surf2:#241E1A;--cream:#F5EDD8;--cream2:#EDE0C4;--muted:#9A8060;--green:#5aA060;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--deep);color:var(--cream);font-family:'Crimson Pro',Georgia,serif;font-size:18px;line-height:1.7;overflow-x:hidden;}
+a{text-decoration:none;}
+
+/* ── ANNOUNCEMENT BAR ── */
+.ann{background:var(--gold);text-align:center;padding:.55rem 1rem;z-index:200;position:relative;}
+.ann-t{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--deep);font-weight:600;}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:.9rem 5vw;background:rgba(13,10,11,.97);border-bottom:1px solid rgba(201,168,76,.12);backdrop-filter:blur(8px);}
+.n-logo{font-family:'Cinzel',serif;font-size:1.3rem;font-weight:600;color:var(--gold);letter-spacing:.12em;}
+.n-logo span{color:var(--cream);font-weight:400;}
+.n-links{display:flex;gap:1.8rem;list-style:none;}
+.n-links a{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cream2);transition:color .3s;}
+.n-links a:hover{color:var(--gold);}
+.n-cta{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--deep);background:var(--gold);padding:.55rem 1.3rem;transition:background .3s;cursor:pointer;border:none;}
+.n-cta:hover{background:var(--gold-lt);}
+
+/* ── HAMBURGER ── */
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.3rem;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--cream);transition:all .3s;}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+.mob-menu{display:none;flex-direction:column;background:var(--deep);border-bottom:1px solid rgba(201,168,76,.15);padding:1.2rem 5vw 1.5rem;gap:.1rem;position:sticky;top:57px;z-index:99;}
+.mob-menu.open{display:flex;}
+.mob-menu a{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cream2);padding:.65rem 0;border-bottom:1px solid rgba(201,168,76,.07);transition:color .2s;}
+.mob-menu a:hover{color:var(--gold);}
+.mob-cta{color:var(--gold)!important;border-bottom:none!important;margin-top:.4rem;}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:5rem 5vw 4rem;}
+.h-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 65% 50%,rgba(201,168,76,.07),transparent 55%),radial-gradient(ellipse at 15% 70%,rgba(107,30,42,.13),transparent 45%),var(--deep);}
+.h-copy{position:relative;z-index:2;max-width:520px;}
+.h-visual{position:absolute;right:5vw;top:50%;transform:translateY(-50%);z-index:1;opacity:.18;pointer-events:none;}
+.h-trust{display:flex;align-items:center;gap:.6rem;margin-bottom:1.4rem;}
+.h-stars{display:flex;gap:2px;}
+.h-star{width:11px;height:11px;background:var(--gold);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);}
+.h-trust-txt{font-family:'Cinzel',serif;font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);}
+.h-eye{font-family:'Cinzel',serif;font-size:.56rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin-bottom:1.1rem;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,5vw,4.8rem);font-weight:300;line-height:1.06;color:var(--cream);margin-bottom:1.1rem;}
+.hero h1 em{font-style:italic;color:var(--gold);display:block;}
+.h-sub{font-size:1rem;color:var(--muted);max-width:380px;margin-bottom:.9rem;font-weight:300;line-height:1.8;}
+.h-price-note{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;}
+.h-btns{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;}
+.btn-g{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--deep);background:var(--gold);padding:.85rem 2rem;display:inline-block;transition:background .3s;cursor:pointer;border:none;}
+.btn-g:hover{background:var(--gold-lt);}
+.btn-o{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cream2);display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 0;border-bottom:1px solid rgba(201,168,76,.3);transition:all .3s;}
+.btn-o:hover{color:var(--gold);}
+
+/* ── TRUST BAR ── */
+.tbar{background:var(--surf);border-top:1px solid rgba(201,168,76,.1);border-bottom:1px solid rgba(201,168,76,.1);padding:.9rem 5vw;}
+.tbar-in{display:flex;justify-content:center;gap:3vw;flex-wrap:wrap;align-items:center;}
+.tbi{display:flex;align-items:center;gap:.55rem;font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);}
+.tbi-div{width:1px;height:16px;background:rgba(201,168,76,.18);}
+
+/* ── MARQUEE ── */
+.mq{overflow:hidden;border-bottom:1px solid rgba(201,168,76,.1);background:var(--surf2);padding:.75rem 0;}
+.mq-t{display:flex;gap:2rem;animation:mqr 26s linear infinite;width:max-content;}
+@keyframes mqr{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.mq-i{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:2rem;white-space:nowrap;}
+.mq-d{width:4px;height:4px;background:var(--gold);transform:rotate(45deg);display:inline-block;flex-shrink:0;}
+
+/* ── URGENCY BAR ── */
+.urg{background:rgba(201,168,76,.07);border-top:1px solid rgba(201,168,76,.18);border-bottom:1px solid rgba(201,168,76,.18);padding:.85rem 5vw;text-align:center;}
+.urg-t{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);}
+.urg-t span{color:var(--cream);}
+
+/* ── SHARED SECTION ── */
+section{padding:5rem 5vw;}
+.stag{font-family:'Cinzel',serif;font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;}
+.stit{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.4vw,3rem);font-weight:300;line-height:1.12;color:var(--cream);margin-bottom:.9rem;}
+.stit em{font-style:italic;color:var(--gold);}
+.ssub{font-size:.94rem;color:var(--muted);max-width:450px;font-weight:300;line-height:1.82;}
+
+/* ── COLLECTIONS ── */
+.coll{background:var(--deep);padding:4rem 0 4rem 5vw;}
+.coll-hd{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:1.8rem;padding-right:5vw;flex-wrap:wrap;gap:1rem;}
+.coll-scroll{display:flex;gap:12px;overflow-x:auto;padding-bottom:1rem;padding-right:5vw;scrollbar-width:none;}
+.coll-scroll::-webkit-scrollbar{display:none;}
+.col-c{flex:0 0 220px;position:relative;overflow:hidden;cursor:pointer;background:var(--surf2);border:1px solid rgba(201,168,76,.08);transition:border-color .3s,transform .3s;}
+.col-c:hover{border-color:rgba(201,168,76,.3);transform:translateY(-3px);}
+.mw{width:100%;display:flex;align-items:center;justify-content:center;padding:1.2rem;min-height:200px;}
+.col-ov{padding:1rem 1.1rem 1.2rem;border-top:1px solid rgba(201,168,76,.08);}
+.col-tag{font-family:'Cinzel',serif;font-size:.48rem;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:.2rem;}
+.col-nm{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:300;color:var(--cream);}
+.col-pr{font-size:.84rem;color:var(--muted);margin-top:.2rem;}
+.col-btn{display:inline-block;margin-top:.65rem;font-family:'Cinzel',serif;font-size:.52rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid rgba(201,168,76,.3);padding-bottom:.1rem;cursor:pointer;transition:color .2s;}
+.col-btn:hover{color:var(--gold-lt);}
+
+/* ── BUNDLES ── */
+.bun{background:var(--surf);}
+.bun-hd{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2.4rem;flex-wrap:wrap;gap:1rem;}
+.bun-g{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.bc{background:var(--surf2);position:relative;overflow:hidden;transition:background .3s;}
+.bc:hover{background:#2a1e18;}
+.bv{padding:2rem 1.6rem .8rem;display:flex;justify-content:center;align-items:flex-end;min-height:180px;}
+.bb{padding:0 1.8rem 2rem;}
+.bdg{display:inline-block;font-family:'Cinzel',serif;font-size:.48rem;letter-spacing:.2em;text-transform:uppercase;background:var(--gold);color:var(--deep);padding:.2rem .55rem;margin-bottom:.75rem;}
+.bdg.gr{background:rgba(90,160,96,.18);color:#7ac07f;}
+.bnm{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:300;color:var(--cream);line-height:1.1;margin-bottom:.35rem;}
+.bds{font-size:.86rem;color:var(--muted);font-weight:300;line-height:1.7;margin-bottom:.85rem;}
+.bpr{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.75rem;}
+.bpn{font-family:'Cormorant Garamond',serif;font-size:1.65rem;color:var(--gold);font-weight:300;}
+.bpo{font-size:.9rem;color:var(--muted);text-decoration:line-through;}
+.bsv{font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.1em;color:var(--green);background:rgba(90,160,96,.1);padding:.15rem .4rem;}
+.bil{margin-bottom:1.2rem;}
+.bil li{font-size:.82rem;color:var(--muted);font-weight:300;line-height:1.9;list-style:none;display:flex;align-items:center;gap:.45rem;}
+.bil li::before{content:'';width:4px;height:4px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;}
+.bct{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--deep);background:var(--gold);padding:.72rem 1.4rem;display:inline-block;transition:background .3s;border:none;cursor:pointer;}
+.bct:hover{background:var(--gold-lt);}
+
+/* ── STATS ── */
+.stats{background:var(--surf2);border-top:1px solid rgba(201,168,76,.1);border-bottom:1px solid rgba(201,168,76,.1);padding:2.5rem 5vw;}
+.stats-in{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+.stat{text-align:center;padding:1.5rem 1rem;}
+.stat-n{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:var(--gold);line-height:1;}
+.stat-l{font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:.3rem;}
+
+/* ── CUSTOMIZE ── */
+.cust{background:var(--deep);}
+.cu-in{display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:center;}
+.cu-steps{margin-top:1.8rem;}
+.stp{display:flex;gap:1.4rem;padding:1.3rem 0;border-bottom:1px solid rgba(201,168,76,.1);}
+.stp-n{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.16em;color:var(--gold);min-width:20px;padding-top:.2rem;}
+.stp-b h4{font-family:'Cormorant Garamond',serif;font-size:1.18rem;font-weight:500;color:var(--cream);margin-bottom:.2rem;}
+.stp-b p{font-size:.84rem;color:var(--muted);font-weight:300;line-height:1.68;}
+.cu-vis{display:flex;flex-direction:column;align-items:center;gap:1.1rem;}
+.sw{width:26px;height:26px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:transform .2s,border-color .2s;}
+.sw:hover,.sw.on{transform:scale(1.28);border-color:var(--gold);}
+.sw-row{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;}
+
+/* ── OCCASIONS ── */
+.occ{background:var(--surf);}
+.occ-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:2.2rem;}
+.og{background:var(--surf2);padding:1.6rem;cursor:pointer;transition:all .3s;position:relative;overflow:hidden;}
+.og::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--gold);transition:width .4s;}
+.og:hover::after{width:100%;}
+.og-icon{margin-bottom:.8rem;display:flex;align-items:flex-end;height:80px;}
+.og-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:300;color:var(--cream);margin-bottom:.3rem;}
+.og-title em{font-style:italic;color:var(--gold);}
+.og-desc{font-size:.83rem;color:var(--muted);font-weight:300;line-height:1.7;margin-bottom:.9rem;}
+.og-price{font-family:'Cinzel',serif;font-size:.56rem;letter-spacing:.14em;color:var(--gold);}
+.og-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Cinzel',serif;font-size:.54rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:.7rem;border-bottom:1px solid rgba(201,168,76,.25);padding-bottom:.1rem;transition:color .2s;}
+.og-link:hover{color:var(--gold-lt);}
+
+/* ── TESTIMONIALS ── */
+.test{background:var(--deep);}
+.tes-g{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:2.4rem;}
+.tc{background:var(--surf);padding:2rem 1.6rem;position:relative;transition:transform .3s;}
+.tc:hover{transform:translateY(-4px);}
+.stars{display:flex;gap:3px;margin-bottom:.8rem;}
+.st{width:9px;height:9px;background:var(--gold);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);}
+.tq{font-family:'Cormorant Garamond',serif;font-size:1.04rem;font-style:italic;color:var(--cream2);line-height:1.78;margin-bottom:1rem;font-weight:300;}
+.ta{display:flex;align-items:center;gap:.8rem;}
+.tav{width:34px;height:34px;border-radius:50%;background:var(--surf2);border:1px solid rgba(201,168,76,.25);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.75rem;color:var(--gold);flex-shrink:0;}
+.tnm{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.1em;color:var(--cream);}
+.tlc{font-size:.74rem;color:var(--muted);}
+
+/* ── ABOUT ── */
+.about-sec{background:var(--surf2);}
+.about-in{display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:start;}
+.about-p{font-size:.95rem;color:var(--muted);font-weight:300;line-height:1.85;margin-bottom:1rem;}
+.about-vals{margin-top:2rem;display:flex;flex-direction:column;gap:.9rem;}
+.about-val{display:flex;align-items:flex-start;gap:.9rem;}
+.about-val-icon{color:var(--gold);font-size:.5rem;margin-top:.45rem;flex-shrink:0;}
+.about-val strong{display:block;font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);margin-bottom:.1rem;}
+.about-val span{font-size:.82rem;color:var(--muted);font-weight:300;}
+
+/* ── CONTACT FORM ── */
+.about-form-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--cream);line-height:1.15;margin-bottom:1.6rem;}
+.about-form-title em{font-style:italic;color:var(--gold);}
+.cf-field{margin-bottom:1.1rem;}
+.cf-label{display:block;font-family:'Cinzel',serif;font-size:.54rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem;}
+.cf-input,.cf-textarea{width:100%;background:var(--surf);border:1px solid rgba(201,168,76,.15);color:var(--cream);font-family:'Crimson Pro',serif;font-size:1rem;padding:.7rem .95rem;outline:none;transition:border-color .3s;}
+.cf-input:focus,.cf-textarea:focus{border-color:var(--gold);}
+.cf-input::placeholder,.cf-textarea::placeholder{color:var(--muted);font-weight:300;}
+.cf-textarea{height:110px;resize:vertical;}
+.cf-err{font-size:.75rem;color:#e05555;margin-top:.25rem;min-height:.9rem;}
+.cf-btn{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--deep);background:var(--gold);padding:.8rem 1.8rem;border:none;cursor:pointer;transition:background .3s;margin-top:.4rem;}
+.cf-btn:hover{background:var(--gold-lt);}
+.cf-success{display:none;margin-top:1rem;font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green);padding:.75rem 1rem;border:1px solid rgba(90,160,96,.25);background:rgba(90,160,96,.06);}
+
+/* ── FAQ ── */
+.faq{background:var(--surf);}
+.faq-g{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:2.4rem;}
+.faq-item{background:var(--surf2);}
+.faq-q{font-family:'Cinzel',serif;font-size:.63rem;letter-spacing:.13em;text-transform:uppercase;color:var(--cream);padding:1.3rem 1.5rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:.8rem;transition:color .3s;user-select:none;}
+.faq-q:hover{color:var(--gold);}
+.faq-q .arr{color:var(--gold);transition:transform .3s;flex-shrink:0;}
+.faq-item.open .faq-q .arr{transform:rotate(180deg);}
+.faq-ans{font-size:.87rem;color:var(--muted);font-weight:300;line-height:1.8;max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;padding:0 1.5rem;}
+.faq-item.open .faq-ans{max-height:300px;padding:0 1.5rem 1.3rem;}
+
+/* ── CTA BANNER ── */
+.cta-ban{background:var(--gold);padding:3.5rem 5vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:2rem;}
+.cta-t h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.8vw,2.5rem);font-weight:300;color:var(--deep);line-height:1.1;margin-bottom:.3rem;}
+.cta-t p{font-size:.9rem;color:var(--gold-dk);font-weight:300;}
+.btn-dk{font-family:'Cinzel',serif;font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);background:var(--deep);padding:.85rem 1.9rem;display:inline-block;transition:all .3s;border:none;cursor:pointer;}
+.btn-dk:hover{background:#1C1714;}
+
+/* ── FOOTER ── */
+footer{background:var(--deep);border-top:1px solid rgba(201,168,76,.1);padding:3.5rem 5vw 2rem;}
+.ft{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4vw;margin-bottom:2.5rem;}
+.fl{font-family:'Cinzel',serif;font-size:1.25rem;font-weight:600;color:var(--gold);letter-spacing:.12em;display:block;margin-bottom:.75rem;}
+.fl span{color:var(--cream);font-weight:400;}
+.foot-about{font-size:.84rem;color:var(--muted);font-weight:300;line-height:1.78;max-width:230px;margin-bottom:1.2rem;}
+.fc h4{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.fc ul{list-style:none;}
+.fc li{margin-bottom:.5rem;}
+.fc a{font-size:.82rem;color:var(--muted);transition:color .3s;font-weight:300;}
+.fc a:hover{color:var(--cream2);}
+.foot-social{display:flex;gap:1.5rem;margin-bottom:1.4rem;flex-wrap:wrap;}
+.soc-link{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);transition:color .3s;border-bottom:1px solid rgba(201,168,76,.2);padding-bottom:.1rem;}
+.soc-link:hover{color:var(--gold);}
+.fb{border-top:1px solid rgba(201,168,76,.1);padding-top:1.4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.fb p{font-size:.74rem;color:var(--muted);font-weight:300;}
+.pay{display:flex;gap:.4rem;flex-wrap:wrap;}
+.py{font-family:'Cinzel',serif;font-size:.46rem;letter-spacing:.1em;color:var(--muted);border:1px solid rgba(201,168,76,.13);padding:.24rem .44rem;}
+
+/* ── STICKY CTA ── */
+.sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:500;background:var(--deep);border-top:1px solid rgba(201,168,76,.2);padding:.8rem 1.2rem;gap:.8rem;align-items:center;justify-content:space-between;}
+.sticky-cta-txt{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--cream);}
+.sticky-cta-txt span{color:var(--gold);}
+.sticky-cta-btn{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--deep);background:var(--gold);padding:.7rem 1.4rem;white-space:nowrap;border:none;cursor:pointer;transition:background .3s;}
+.sticky-cta-btn:hover{background:var(--gold-lt);}
+
+/* ── ORDER MODAL ── */
+#orderModal{position:fixed;inset:0;z-index:900;display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;pointer-events:none;transition:opacity .35s;}
+#orderModal.open{opacity:1;pointer-events:all;}
+.om-bg{position:absolute;inset:0;background:rgba(5,3,4,.88);backdrop-filter:blur(6px);}
+.om-box{position:relative;z-index:1;background:var(--surf);width:100%;max-width:560px;max-height:90vh;overflow-y:auto;border:1px solid rgba(201,168,76,.18);transform:translateY(30px);transition:transform .4s cubic-bezier(.22,1,.36,1);}
+#orderModal.open .om-box{transform:translateY(0);}
+.om-hd{background:var(--deep);padding:1.5rem 1.8rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(201,168,76,.12);position:sticky;top:0;z-index:2;}
+.om-hd h2{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:300;color:var(--cream);}
+.om-hd h2 em{font-style:italic;color:var(--gold);}
+.om-close{background:none;border:none;color:var(--muted);font-size:1.3rem;cursor:pointer;padding:.2rem .4rem;transition:color .3s;}
+.om-close:hover{color:var(--gold);}
+.om-prog{padding:1.1rem 1.8rem;background:var(--surf2);display:flex;align-items:center;border-bottom:1px solid rgba(201,168,76,.1);}
+.prog-dot{width:26px;height:26px;border-radius:50%;background:var(--surf);border:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.58rem;color:var(--muted);transition:all .3s;flex-shrink:0;}
+.prog-dot.active{background:var(--gold);color:var(--deep);border-color:var(--gold);}
+.prog-dot.done{background:rgba(201,168,76,.2);color:var(--gold);border-color:var(--gold);}
+.prog-line{flex:1;height:1px;background:rgba(201,168,76,.15);}
+.om-body{padding:1.8rem;}
+.ostep{display:none;}
+.ostep.active{display:block;}
+.ostep-title{font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--cream);margin-bottom:1.4rem;font-weight:300;}
+.ostep-title em{font-style:italic;color:var(--gold);}
+.ofield{margin-bottom:1.2rem;}
+.ofield label{display:block;font-family:'Cinzel',serif;font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.45rem;}
+.oinput,.oselect,.otextarea{width:100%;background:var(--surf2);border:1px solid rgba(201,168,76,.15);color:var(--cream);font-family:'Crimson Pro',serif;font-size:1rem;padding:.7rem .95rem;outline:none;transition:border-color .3s;-webkit-appearance:none;}
+.oinput:focus,.oselect:focus,.otextarea:focus{border-color:var(--gold);}
+.oinput::placeholder,.otextarea::placeholder{color:var(--muted);font-weight:300;}
+.oselect{cursor:pointer;}
+.oselect option{background:#1C1714;}
+.otextarea{height:76px;resize:vertical;}
+.ofield-hint{font-size:.76rem;color:var(--muted);margin-top:.28rem;font-weight:300;}
+.orow{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.mcols{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:.3rem;}
+.mcol{width:30px;height:30px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:transform .2s,border-color .2s;}
+.mcol:hover,.mcol.on{transform:scale(1.22);border-color:var(--gold);}
+.mcol-lbl{display:block;font-size:.68rem;color:var(--muted);margin-top:.4rem;font-weight:300;}
+.symbol-opts{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:.4rem;}
+.sym-btn{display:flex;flex-direction:column;align-items:center;gap:.3rem;cursor:pointer;padding:.6rem .9rem;border:1px solid rgba(201,168,76,.18);background:var(--surf2);transition:all .25s;min-width:72px;}
+.sym-btn:hover{border-color:rgba(201,168,76,.5);}
+.sym-btn.picked{border-color:var(--gold);background:rgba(201,168,76,.08);}
+.sym-icon{font-size:1.3rem;line-height:1;}
+.sym-lbl{font-family:'Cinzel',serif;font-size:.46rem;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;}
+.sym-btn.picked .sym-lbl{color:var(--gold);}
+.osummary{background:var(--surf2);border:1px solid rgba(201,168,76,.12);padding:1.2rem;margin-bottom:1.4rem;}
+.osummary h4{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.85rem;}
+.osum-row{display:flex;justify-content:space-between;align-items:baseline;padding:.28rem 0;border-bottom:1px solid rgba(201,168,76,.07);}
+.osum-row:last-child{border-bottom:none;}
+.osum-lbl{font-size:.86rem;color:var(--muted);font-weight:300;}
+.osum-val{font-family:'Cormorant Garamond',serif;font-size:.98rem;color:var(--cream);}
+.osum-total{color:var(--gold);font-size:1.35rem;}
+.om-foot{padding:1.1rem 1.8rem;border-top:1px solid rgba(201,168,76,.1);display:flex;gap:.75rem;justify-content:flex-end;background:var(--deep);position:sticky;bottom:0;}
+.obtn{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;padding:.75rem 1.6rem;border:none;cursor:pointer;transition:all .3s;}
+.obtn-prev{background:transparent;color:var(--muted);border:1px solid rgba(201,168,76,.2);}
+.obtn-next,.obtn-submit{background:var(--gold);color:var(--deep);}
+.obtn-next:hover,.obtn-submit:hover{background:var(--gold-lt);}
+.obtn-next:disabled,.obtn-submit:disabled{opacity:.5;cursor:not-allowed;}
+#oConfirm{display:none;flex-direction:column;align-items:center;text-align:center;padding:2.8rem 1.8rem;}
+#oConfirm h3{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:var(--cream);margin-bottom:.75rem;}
+#oConfirm h3 em{font-style:italic;color:var(--gold);}
+#oConfirm p{font-size:.93rem;color:var(--muted);font-weight:300;line-height:1.82;max-width:340px;}
+.oconf-ref{margin-top:1.2rem;font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.18);padding:.7rem 1.2rem;}
+
+/* ── FADE IN ── */
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1000px){
+  .bun-g,.cu-in,.about-in{grid-template-columns:1fr 1fr;}
+  .cu-vis{display:none;}
+  .ft{grid-template-columns:1fr 1fr;}
+  .n-links,.n-cta{display:none;}
+  .hamburger{display:flex;}
+  .occ-grid{grid-template-columns:repeat(2,1fr);}
+  .h-visual{display:none;}
+}
+@media(max-width:600px){
+  section{padding:3.5rem 4vw;}
+  .bun-g,.tes-g,.occ-grid,.about-in{grid-template-columns:1fr;}
+  .faq-g{grid-template-columns:1fr;}
+  .ft{grid-template-columns:1fr;}
+  .cta-ban{justify-content:center;text-align:center;}
+  .stats-in{grid-template-columns:1fr 1fr;}
+  .sticky-cta{display:flex;}
+  body{padding-bottom:64px;}
+  .orow{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="ann">
+  <div class="ann-t">&#x1F319; Ramadan is here &middot; Use <strong>SAJDA10</strong> for 10% off &middot; Free gift box on every order &middot; Worldwide shipping &#x2728;</div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="n-logo">Sajda<span> Studio</span></a>
+  <ul class="n-links" id="navLinks">
+    <li><a href="#collections" onclick="closeMenu()">Collections</a></li>
+    <li><a href="#bundles" onclick="closeMenu()">Sets &amp; Bundles</a></li>
+    <li><a href="#customize" onclick="closeMenu()">Customize</a></li>
+    <li><a href="#about" onclick="closeMenu()">About</a></li>
+    <li><a href="#faq" onclick="closeMenu()">Info</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:1rem;">
+    <button class="n-cta" onclick="openOrder('')">Design Your Mat</button>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <a href="#collections" onclick="closeMenu()">Collections</a>
+  <a href="#bundles" onclick="closeMenu()">Sets &amp; Bundles</a>
+  <a href="#customize" onclick="closeMenu()">Customize</a>
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#faq" onclick="closeMenu()">Info</a>
+  <a href="#" class="mob-cta" onclick="closeMenu();openOrder('');return false;">Design Your Mat</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="h-bg"></div>
+  <!-- Decorative background mat SVG -->
+  <div class="h-visual">
+    <svg viewBox="0 0 340 460" fill="none" width="460" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="hg1" x1="0" y1="0" x2="340" y2="460" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#C9A84C"/>
+          <stop offset="100%" stop-color="#6B4A12"/>
+        </linearGradient>
+      </defs>
+      <rect width="340" height="460" rx="3" fill="url(#hg1)"/>
+      <rect x="8" y="8" width="324" height="444" fill="none" stroke="#F5EDD8" stroke-width="3.5"/>
+      <rect x="18" y="18" width="304" height="424" fill="none" stroke="#F5EDD8" stroke-width="1.5"/>
+      <path d="M90,432L90,178Q170,86 250,178L250,432Z" fill="none" stroke="#F5EDD8" stroke-width="4"/>
+      <path d="M108,432L108,196Q170,110 232,196L232,432Z" fill="none" stroke="#F5EDD8" stroke-width="2"/>
+      <path d="M170,86L184,108L170,130L156,108Z" fill="#F5EDD8"/>
+      <text x="170" y="452" text-anchor="middle" font-family="Cinzel" font-size="14" fill="#F5EDD8" letter-spacing="4" opacity=".6">SAJDA STUDIO</text>
+    </svg>
+  </div>
+  <div class="h-copy">
+    <div class="h-trust">
+      <div class="h-stars">
+        <div class="h-star"></div><div class="h-star"></div><div class="h-star"></div><div class="h-star"></div><div class="h-star"></div>
+      </div>
+      <span class="h-trust-txt">100+ mats crafted &middot; 98% satisfaction</span>
+    </div>
+    <div class="h-eye">Handcrafted to Order &middot; Est. 2024</div>
+    <h1>Where Sacred<em>Meets Artistry</em></h1>
+    <p class="h-sub">Personalised memory foam prayer mats in embossed velvet &mdash; embroidered with your name, delivered worldwide in a luxury gift box.</p>
+    <div class="h-price-note">From $40 &middot; +$7 name personalization &middot; +$3 heart or moon &middot; Free gift box</div>
+    <div class="h-btns">
+      <button class="btn-g" onclick="openOrder('')">Design Your Mat</button>
+      <a href="#bundles" class="btn-o">Shop Sets &amp; Bundles &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="tbar">
+  <div class="tbar-in">
+    <div class="tbi">&#9733; Free Gift Box</div>
+    <div class="tbi-div"></div>
+    <div class="tbi">&#9679; Ships in 2&ndash;3 Weeks</div>
+    <div class="tbi-div"></div>
+    <div class="tbi">&#9679; 42+ Countries</div>
+    <div class="tbi-div"></div>
+    <div class="tbi">&#9829; Handcrafted to Order</div>
+    <div class="tbi-div"></div>
+    <div class="tbi">&#10003; 100% Satisfaction</div>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="mq">
+  <div class="mq-t">
+    <div class="mq-i">Memory Foam Comfort<span class="mq-d"></span></div>
+    <div class="mq-i">Embossed Velvet<span class="mq-d"></span></div>
+    <div class="mq-i">Custom Name Embroidery &mdash; +$7<span class="mq-d"></span></div>
+    <div class="mq-i">Heart or Moon Symbol &mdash; +$3<span class="mq-d"></span></div>
+    <div class="mq-i">Duo &amp; Family Sets<span class="mq-d"></span></div>
+    <div class="mq-i">Ships Worldwide<span class="mq-d"></span></div>
+    <div class="mq-i">Eid &middot; Nikah &middot; Ramadan &middot; Aqiqah<span class="mq-d"></span></div>
+    <div class="mq-i">Anti-Slip Backing<span class="mq-d"></span></div>
+    <div class="mq-i">Memory Foam Comfort<span class="mq-d"></span></div>
+    <div class="mq-i">Embossed Velvet<span class="mq-d"></span></div>
+    <div class="mq-i">Custom Name Embroidery &mdash; +$7<span class="mq-d"></span></div>
+    <div class="mq-i">Heart or Moon Symbol &mdash; +$3<span class="mq-d"></span></div>
+    <div class="mq-i">Duo &amp; Family Sets<span class="mq-d"></span></div>
+    <div class="mq-i">Ships Worldwide<span class="mq-d"></span></div>
+    <div class="mq-i">Eid &middot; Nikah &middot; Ramadan &middot; Aqiqah<span class="mq-d"></span></div>
+    <div class="mq-i">Anti-Slip Backing<span class="mq-d"></span></div>
+  </div>
+</div>
+
+<!-- URGENCY -->
+<div class="urg">
+  <div class="urg-t">&#x1F319; <span>Ramadan Special</span> &mdash; Order now, arrives before Eid &middot; Ends in
+    <span id="cd-d">03</span>d <span id="cd-h">08</span>h <span id="cd-m">22</span>m <span id="cd-s">14</span>s
+  </div>
+</div>
+
+<!-- COLLECTIONS -->
+<div class="coll" id="collections">
+  <div class="coll-hd">
+    <div>
+      <div class="stag">Our Collections</div>
+      <h2 class="stit">Choose Your <em>Style</em></h2>
+    </div>
+    <button class="btn-o" onclick="openOrder('')">Customize Yours &rarr;</button>
+  </div>
+  <div class="coll-scroll">
+    <!-- Emerald Velvet -->
+    <div class="col-c">
+      <div class="mw" style="background:#081f16;">
+        <svg viewBox="0 0 150 200" fill="none" width="120">
+          <defs><linearGradient id="cc2" x1="0" y1="0" x2="150" y2="200" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#0d5c42"/><stop offset="100%" stop-color="#052e20"/></linearGradient></defs>
+          <rect width="150" height="200" rx="1" fill="url(#cc2)"/>
+          <rect x="4" y="4" width="142" height="192" fill="none" stroke="#2aaa80" stroke-width="2"/>
+          <rect x="10" y="10" width="130" height="180" fill="none" stroke="#2aaa80" stroke-width="1"/>
+          <path d="M38,186L38,78Q75,36 112,78L112,186Z" fill="none" stroke="#2aaa80" stroke-width="2.2"/>
+          <path d="M47,186L47,88Q75,50 103,88L103,186Z" fill="none" stroke="#2aaa80" stroke-width="1.2"/>
+          <path d="M75,36L81,47L75,58L69,47Z" fill="#2aaa80"/>
+        </svg>
+      </div>
+      <div class="col-ov">
+        <div class="col-tag">Bestseller</div>
+        <div class="col-nm">Emerald Velvet</div>
+        <div class="col-pr">$40 &middot; +$7 name &middot; +$3 symbol</div>
+        <a href="#" class="col-btn" onclick="openOrder('single');return false;">Design Yours &rarr;</a>
+      </div>
+    </div>
+    <!-- Royal Blue -->
+    <div class="col-c">
+      <div class="mw" style="background:#0a1022;">
+        <svg viewBox="0 0 150 200" fill="none" width="120">
+          <defs><linearGradient id="cc3" x1="0" y1="0" x2="150" y2="200" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#1a2fa8"/><stop offset="100%" stop-color="#080f50"/></linearGradient></defs>
+          <rect width="150" height="200" rx="1" fill="url(#cc3)"/>
+          <rect x="4" y="4" width="142" height="192" fill="none" stroke="#4466dd" stroke-width="2"/>
+          <rect x="10" y="10" width="130" height="180" fill="none" stroke="#4466dd" stroke-width="1"/>
+          <path d="M38,186L38,78Q75,36 112,78L112,186Z" fill="none" stroke="#4466dd" stroke-width="2.2"/>
+          <path d="M47,186L47,88Q75,50 103,88L103,186Z" fill="none" stroke="#4466dd" stroke-width="1.2"/>
+          <path d="M75,36L81,47L75,58L69,47Z" fill="#4466dd"/>
+        </svg>
+      </div>
+      <div class="col-ov">
+        <div class="col-tag">New</div>
+        <div class="col-nm">Royal Blue</div>
+        <div class="col-pr">$40 &middot; +$7 name &middot; +$3 symbol</div>
+        <a href="#" class="col-btn" onclick="openOrder('single');return false;">Design Yours &rarr;</a>
+      </div>
+    </div>
+    <!-- Soft Grey -->
+    <div class="col-c">
+      <div class="mw" style="background:#1e1e1e;">
+        <svg viewBox="0 0 150 200" fill="none" width="120">
+          <defs><linearGradient id="cc4" x1="0" y1="0" x2="150" y2="200" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#888888"/><stop offset="100%" stop-color="#444444"/></linearGradient></defs>
+          <rect width="150" height="200" rx="1" fill="url(#cc4)"/>
+          <rect x="4" y="4" width="142" height="192" fill="none" stroke="#bbbbbb" stroke-width="2"/>
+          <rect x="10" y="10" width="130" height="180" fill="none" stroke="#bbbbbb" stroke-width="1"/>
+          <path d="M38,186L38,78Q75,36 112,78L112,186Z" fill="none" stroke="#bbbbbb" stroke-width="2.2"/>
+          <path d="M47,186L47,88Q75,50 103,88L103,186Z" fill="none" stroke="#bbbbbb" stroke-width="1.2"/>
+          <path d="M75,36L81,47L75,58L69,47Z" fill="#bbbbbb"/>
+        </svg>
+      </div>
+      <div class="col-ov">
+        <div class="col-tag">Classic</div>
+        <div class="col-nm">Dove Grey</div>
+        <div class="col-pr">$40 &middot; +$7 name &middot; +$3 symbol</div>
+        <a href="#" class="col-btn" onclick="openOrder('single');return false;">Design Yours &rarr;</a>
+      </div>
+    </div>
+    <!-- Rose Blush -->
+    <div class="col-c">
+      <div class="mw" style="background:#1e0c12;">
+        <svg viewBox="0 0 150 200" fill="none" width="120">
+          <defs><linearGradient id="cc5" x1="0" y1="0" x2="150" y2="200" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#a05060"/><stop offset="100%" stop-color="#6a2838"/></linearGradient></defs>
+          <rect width="150" height="200" rx="1" fill="url(#cc5)"/>
+          <rect x="4" y="4" width="142" height="192" fill="none" stroke="#c47a8a" stroke-width="2"/>
+          <rect x="10" y="10" width="130" height="180" fill="none" stroke="#c47a8a" stroke-width="1"/>
+          <path d="M38,186L38,78Q75,36 112,78L112,186Z" fill="none" stroke="#c47a8a" stroke-width="2.2"/>
+          <path d="M47,186L47,88Q75,50 103,88L103,186Z" fill="none" stroke="#c47a8a" stroke-width="1.2"/>
+          <path d="M75,36L81,47L75,58L69,47Z" fill="#c47a8a"/>
+        </svg>
+      </div>
+      <div class="col-ov">
+        <div class="col-tag">Limited</div>
+        <div class="col-nm">Rose Blossom</div>
+        <div class="col-pr">$40 &middot; +$7 name &middot; +$3 symbol</div>
+        <a href="#" class="col-btn" onclick="openOrder('single');return false;">Design Yours &rarr;</a>
+      </div>
+    </div>
+    <!-- Crimson Red -->
+    <div class="col-c">
+      <div class="mw" style="background:#180408;">
+        <svg viewBox="0 0 150 200" fill="none" width="120">
+          <defs><linearGradient id="cc6" x1="0" y1="0" x2="150" y2="200" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#c01a2a"/><stop offset="100%" stop-color="#6a0a14"/></linearGradient></defs>
+          <rect width="150" height="200" rx="1" fill="url(#cc6)"/>
+          <rect x="4" y="4" width="142" height="192" fill="none" stroke="#e85060" stroke-width="2"/>
+          <rect x="10" y="10" width="130" height="180" fill="none" stroke="#e85060" stroke-width="1"/>
+          <path d="M38,186L38,78Q75,36 112,78L112,186Z" fill="none" stroke="#e85060" stroke-width="2.2"/>
+          <path d="M47,186L47,88Q75,50 103,88L103,186Z" fill="none" stroke="#e85060" stroke-width="1.2"/>
+          <path d="M75,36L81,47L75,58L69,47Z" fill="#e85060"/>
+        </svg>
+      </div>
+      <div class="col-ov">
+        <div class="col-tag">New</div>
+        <div class="col-nm">Crimson Red</div>
+        <div class="col-pr">$40 &middot; +$7 name &middot; +$3 symbol</div>
+        <a href="#" class="col-btn" onclick="openOrder('single');return false;">Design Yours &rarr;</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SETS & BUNDLES -->
+<section class="bun" id="bundles">
+  <div class="bun-hd">
+    <div>
+      <div class="stag">Sets &amp; Bundles</div>
+      <h2 class="stit">More <em>to Give</em></h2>
+    </div>
+    <p class="ssub" style="text-align:right;">Every set ships together in one luxury gift box &mdash; free.</p>
+  </div>
+  <div class="bun-g">
+    <!-- Duo Set -->
+    <div class="bc">
+      <div class="bv">
+        <svg width="120" height="160" viewBox="0 0 360 480" fill="none">
+          <defs>
+            <linearGradient id="bg1" x1="0" y1="0" x2="360" y2="480" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#921E2E"/><stop offset="100%" stop-color="#420C14"/>
+            </linearGradient>
+            <linearGradient id="bg2" x1="0" y1="0" x2="360" y2="480" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#7A30B0"/><stop offset="100%" stop-color="#280A48"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(-20,0)">
+            <rect width="170" height="240" rx="2" fill="url(#bg1)"/>
+            <rect x="5" y="5" width="160" height="230" fill="none" stroke="#C84858" stroke-width="3"/>
+            <path d="M43,224L43,98Q85,46 127,98L127,224Z" fill="none" stroke="#C84858" stroke-width="3"/>
+          </g>
+          <g transform="translate(170,40)">
+            <rect width="170" height="240" rx="2" fill="url(#bg2)"/>
+            <rect x="5" y="5" width="160" height="230" fill="none" stroke="#A058D8" stroke-width="3"/>
+            <path d="M43,224L43,98Q85,46 127,98L127,224Z" fill="none" stroke="#A058D8" stroke-width="3"/>
+          </g>
+        </svg>
+      </div>
+      <div class="bb">
+        <span class="bdg">For Two</span>
+        <div class="bnm">Duo Set</div>
+        <div class="bds">Two mats, two names, one gift box. Perfect for couples, siblings, or closest friends.</div>
+        <div class="bpr"><span class="bpn">$80.00</span></div>
+        <ul class="bil">
+          <li>2 personalised prayer mats</li>
+          <li>Name embroidery per mat (+$7 each)</li>
+          <li>Optional heart or moon (+$3 each)</li>
+          <li>Luxury gift box &middot; Worldwide shipping</li>
+        </ul>
+        <button class="bct" onclick="openOrder('duo')">Order Duo Set</button>
+      </div>
+    </div>
+    <!-- Family Set -->
+    <div class="bc">
+      <div class="bv">
+        <svg width="140" height="160" viewBox="0 0 420 480" fill="none">
+          <defs>
+            <linearGradient id="bg3" x1="0" y1="0" x2="190" y2="252" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#921E2E"/><stop offset="100%" stop-color="#420C14"/>
+            </linearGradient>
+            <linearGradient id="bg4" x1="0" y1="0" x2="190" y2="252" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#7A30B0"/><stop offset="100%" stop-color="#280A48"/>
+            </linearGradient>
+            <linearGradient id="bg5" x1="0" y1="0" x2="190" y2="252" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#1a2fa8"/><stop offset="100%" stop-color="#0a1866"/>
+            </linearGradient>
+            <linearGradient id="bg6" x1="0" y1="0" x2="190" y2="252" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#0d5c42"/><stop offset="100%" stop-color="#052e20"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(0,20)"><rect width="90" height="120" rx="1" fill="url(#bg3)"/><path d="M22,112L22,46Q45,22 68,46L68,112Z" fill="none" stroke="#C84858" stroke-width="2.5"/></g>
+          <g transform="translate(100,0)"><rect width="90" height="120" rx="1" fill="url(#bg4)"/><path d="M22,112L22,46Q45,22 68,46L68,112Z" fill="none" stroke="#A058D8" stroke-width="2.5"/></g>
+          <g transform="translate(200,20)"><rect width="90" height="120" rx="1" fill="url(#bg5)"/><path d="M22,112L22,46Q45,22 68,46L68,112Z" fill="none" stroke="#4466dd" stroke-width="2.5"/></g>
+          <g transform="translate(300,0)"><rect width="90" height="120" rx="1" fill="url(#bg6)"/><path d="M22,112L22,46Q45,22 68,46L68,112Z" fill="none" stroke="#2aaa80" stroke-width="2.5"/></g>
+        </svg>
+      </div>
+      <div class="bb">
+        <span class="bdg gr">Best Value</span>
+        <div class="bnm">Family Set of 4</div>
+        <div class="bds">Your entire family's prayer corner in one box. Four mats, four names, a unified gift.</div>
+        <div class="bpr"><span class="bpn">$160.00</span><span class="bpo">$200.00</span><span class="bsv">Save $40</span></div>
+        <ul class="bil">
+          <li>4 personalised prayer mats</li>
+          <li>Each mat in any color &amp; name</li>
+          <li>Optional symbols per mat</li>
+          <li>Single luxury gift box &middot; Free shipping</li>
+        </ul>
+        <button class="bct" onclick="openOrder('family')">Order Family Set</button>
+      </div>
+    </div>
+    <!-- Bundle -->
+    <div class="bc">
+      <div class="bv">
+        <svg width="140" height="100" viewBox="0 0 420 280" fill="none">
+          <defs>
+            <linearGradient id="bg7" x1="0" y1="0" x2="190" y2="252" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#DAAE68"/><stop offset="100%" stop-color="#8A6030"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(0,0)">
+            <rect width="110" height="150" rx="1" fill="url(#bg7)"/>
+            <path d="M27,140L27,62Q55,28 83,62L83,140Z" fill="none" stroke="#F0D090" stroke-width="3"/>
+          </g>
+          <g transform="translate(130,60)">
+            <ellipse cx="130" cy="60" rx="115" ry="32" fill="none" stroke="#C9A84C" stroke-width="2.2" stroke-dasharray="5 3"/>
+            <circle cx="15" cy="60" r="8" fill="#C9A84C" opacity=".9"/>
+            <circle cx="130" cy="25" r="8" fill="#C9A84C" opacity=".9"/>
+            <circle cx="245" cy="60" r="8" fill="#C9A84C" opacity=".9"/>
+            <line x1="15" y1="60" x2="130" y2="25" stroke="#C9A84C" stroke-width="1.5"/>
+            <line x1="130" y1="25" x2="245" y2="60" stroke="#C9A84C" stroke-width="1.5"/>
+          </g>
+        </svg>
+      </div>
+      <div class="bb">
+        <span class="bdg">Complete Gift</span>
+        <div class="bnm">Mat + Tesbih Bundle</div>
+        <div class="bds">A personalised mat paired with a matching tesbih &mdash; the complete prayer companion, gift-ready.</div>
+        <div class="bpr"><span class="bpn">$50.00</span><span class="bpo">$60.00</span><span class="bsv">Save $10</span></div>
+        <ul class="bil">
+          <li>1 personalised prayer mat</li>
+          <li>Name embroidery (+$7)</li>
+          <li>Optional heart or moon (+$3)</li>
+          <li>1 matching tesbih &middot; Luxury gift box</li>
+        </ul>
+        <button class="bct" onclick="openOrder('tesbih')">Order Bundle</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-in">
+    <div class="stat"><div class="stat-n">100+</div><div class="stat-l">Mats Crafted</div></div>
+    <div class="stat"><div class="stat-n">98%</div><div class="stat-l">Satisfaction</div></div>
+    <div class="stat"><div class="stat-n">42+</div><div class="stat-l">Countries Shipped</div></div>
+    <div class="stat"><div class="stat-n">2&ndash;3</div><div class="stat-l">Weeks to Ship</div></div>
+  </div>
+</div>
+
+<!-- CUSTOMIZE -->
+<section class="cust" id="customize">
+  <div class="cu-in">
+    <div>
+      <div class="stag">The Process</div>
+      <h2 class="stit">Design Your<br><em>Sacred Space</em></h2>
+      <p class="ssub">Simple. Personal. Delivered worldwide in a luxury gift box.</p>
+      <div class="cu-steps">
+        <div class="stp"><div class="stp-n">01</div><div class="stp-b"><h4>Pick Your Style</h4><p>Embossed velvet or geometric lattice &mdash; both with premium memory foam backing.</p></div></div>
+        <div class="stp"><div class="stp-n">02</div><div class="stp-b"><h4>Choose Your Color</h4><p>Black, Grey, Green, Blue, Pink or Red.</p></div></div>
+        <div class="stp"><div class="stp-n">03</div><div class="stp-b"><h4>Add a Name or Dua (+$7)</h4><p>Embroidered in Arabic or Latin script. Any name, any verse.</p></div></div>
+        <div class="stp"><div class="stp-n">04</div><div class="stp-b"><h4>Add a Symbol &mdash; &#9829; or &#9790; (+$3)</h4><p>Optionally add an embroidered heart or crescent moon alongside the name.</p></div></div>
+        <div class="stp"><div class="stp-n">05</div><div class="stp-b"><h4>We Deliver</h4><p>Handcrafted and shipped in our signature gift box within 2&ndash;3 weeks.</p></div></div>
+      </div>
+      <div style="margin-top:2rem;">
+        <button class="btn-g" onclick="openOrder('')">Start Customizing Now</button>
+      </div>
+    </div>
+    <div class="cu-vis">
+      <svg viewBox="0 0 240 320" fill="none" style="width:100%;max-width:280px;" id="prevMat">
+        <defs>
+          <linearGradient id="pG" x1="0" y1="0" x2="240" y2="320" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#1a1a1a" id="ps1"/>
+            <stop offset="100%" stop-color="#080808" id="ps2"/>
+          </linearGradient>
+        </defs>
+        <rect width="240" height="320" rx="2" fill="url(#pG)"/>
+        <rect x="6" y="6" width="228" height="308" fill="none" stroke="#C8C0A8" stroke-width="2.2" id="pF1"/>
+        <rect x="14" y="14" width="212" height="292" fill="none" stroke="#C8C0A8" stroke-width="1.5" id="pF3"/>
+        <path d="M63,292L63,124Q120,60 177,124L177,292Z" fill="none" stroke="#C8C0A8" stroke-width="2.8" id="pAO"/>
+        <path d="M75,292L75,136Q120,76 165,136L165,292Z" fill="none" stroke="#C8C0A8" stroke-width="1.7" id="pAI"/>
+        <path d="M120,60L129,74L120,88L111,74Z" fill="#C8C0A8" id="pDia"/>
+        <text x="120" y="308" text-anchor="middle" font-family="Cinzel" font-size="10" fill="#C8C0A8" id="pName" opacity=".55" letter-spacing="2.5">YOUR NAME</text>
+      </svg>
+      <div style="text-align:center;margin-top:.8rem;">
+        <div class="sw-row">
+          <div class="sw on" style="background:radial-gradient(circle at 35% 35%,#2a2a2a,#080808);" onclick="setColBlack(event)" title="Black"></div>
+          <div class="sw" style="background:radial-gradient(circle at 35% 35%,#9a9a9a,#555555);" onclick="setCol('#888888','#444444','#bbbbbb','#999999',event)" title="Grey"></div>
+          <div class="sw" style="background:radial-gradient(circle at 35% 35%,#2aaa80,#0d5c42);" onclick="setCol('#0d7a5a','#094d38','#2aaa80','#1a8866',event)" title="Green"></div>
+          <div class="sw" style="background:radial-gradient(circle at 35% 35%,#2244cc,#0a1866);" onclick="setCol('#1a2fa8','#0a1866','#4466dd','#2244cc',event)" title="Blue"></div>
+          <div class="sw" style="background:radial-gradient(circle at 35% 35%,#c47a8a,#7a3a48);" onclick="setCol('#a05060','#6a2838','#c47a8a','#b06070',event)" title="Pink"></div>
+          <div class="sw" style="background:radial-gradient(circle at 35% 35%,#e85060,#6a0a14);" onclick="setCol('#c01a2a','#6a0a14','#e85060','#e85060',event)" title="Red"></div>
+        </div>
+        <div style="font-family:'Cinzel',serif;font-size:.52rem;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;margin-top:.65rem;">Select Color</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-sec" id="about">
+  <div class="about-in">
+    <div class="about-text">
+      <div class="stag">Our Story</div>
+      <h2 class="stit">Rooted in Faith.<br><em>Crafted with Care.</em></h2>
+      <p class="about-p">Sajda Studio was born from a simple belief &mdash; that the space where you meet your Creator deserves more than something generic off a shelf. We are a small Muslim-owned team based in Minneapolis, Minnesota, handcrafting personalised prayer mats for families across the world.</p>
+      <p class="about-p">Every mat is made to order. Every name is embroidered by hand. Every box is packed with the intention that this gift will outlast any flower, any card, any candle &mdash; because it will be used five times a day, for years to come.</p>
+      <p class="about-p">We started with a belief that the Muslim gift market deserved better. We are still proving it, one mat at a time.</p>
+      <div class="about-vals">
+        <div class="about-val">
+          <div class="about-val-icon">&#9632;</div>
+          <div><strong>Muslim Owned</strong><span>Based in Minneapolis, MN</span></div>
+        </div>
+        <div class="about-val">
+          <div class="about-val-icon">&#9632;</div>
+          <div><strong>Handcrafted</strong><span>Every order made by hand</span></div>
+        </div>
+        <div class="about-val">
+          <div class="about-val-icon">&#9632;</div>
+          <div><strong>Ships Worldwide</strong><span>42+ countries delivered</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="about-contact" id="contact">
+      <div class="stag">Get In Touch</div>
+      <h3 class="about-form-title">Have a question or<br><em>bulk order enquiry?</em></h3>
+      <div class="cf-field">
+        <label class="cf-label">Your Name</label>
+        <input class="cf-input" type="text" id="cfName" placeholder="e.g. Amina Hassan"/>
+        <div class="cf-err" id="cfNameErr"></div>
+      </div>
+      <div class="cf-field">
+        <label class="cf-label">Email Address</label>
+        <input class="cf-input" type="email" id="cfEmail" placeholder="you@email.com"/>
+        <div class="cf-err" id="cfEmailErr"></div>
+      </div>
+      <div class="cf-field">
+        <label class="cf-label">Message</label>
+        <textarea class="cf-textarea" id="cfMsg" placeholder="Bulk orders, custom designs, general questions..."></textarea>
+        <div class="cf-err" id="cfMsgErr"></div>
+      </div>
+      <button class="cf-btn" onclick="submitContact()">Send Message &rarr;</button>
+      <div class="cf-success" id="cfSuccess">&#10003; Message sent. We'll reply within 24 hours.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="stag">Info</div>
+  <h2 class="stit">Frequently Asked <em>Questions</em></h2>
+  <div class="faq-g">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">What are the prices?<span class="arr">&#9662;</span></div>
+      <div class="faq-ans">All prayer mats are $40 each. Name personalization is +$7 per mat. Adding a heart or moon symbol is +$3 per mat. Duo Sets are $80. Family Sets (4 mats) are $160. The Mat + Tesbih bundle is $50. Use code <strong>SAJDA10</strong> for 10% off your first order.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Shipping &amp; Delivery<span class="arr">&#9662;</span></div>
+      <div class="faq-ans">Orders are delivered within 2&ndash;3 weeks worldwide. You will receive a tracking number once your order ships. We ship to 42+ countries at a flat rate. Expedited options are available &mdash; email us to arrange.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Personalization Options<span class="arr">&#9662;</span></div>
+      <div class="faq-ans">Embroider any name in Arabic or Latin script for +$7 per mat. Optionally add a heart or crescent moon symbol for +$3 per mat. Choose thread color at checkout — Gold, White, or Black. For special requests email <a href="mailto:sajadastudios@gmail.com" style="color:var(--gold);">sajadastudios@gmail.com</a>.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Returns &amp; Exchanges<span class="arr">&#9662;</span></div>
+      <div class="faq-ans">Because every mat is personalised specifically for you, we cannot accept returns on personalised items. If your item arrives damaged or incorrect, contact us within 48 hours and we will remake and reship at no cost to you.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Bundle Savings<span class="arr">&#9662;</span></div>
+      <div class="faq-ans">Duo Sets save on the bundle price vs ordering separately. Family Sets offer the best per-mat value at $40 per mat (vs $40 individually before personalization). The Mat + Tesbih bundle saves $10. All orders include a luxury gift box at no extra charge.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">How Do I Order?<span class="arr">&#9662;</span></div>
+      <div class="faq-ans">Click "Design Your Mat" anywhere on the site. Select your style, color, names (+$7 each), and optional symbols (+$3 each). Submit your order details and we will confirm by email within 24 hours with a secure payment link. For bulk orders of 10+ mats, email us for a custom quote.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-ban">
+  <div class="cta-t">
+    <h2>Ready to design yours?</h2>
+    <p>$40 per mat &middot; +$7 name &middot; +$3 heart or moon &middot; Free gift box &middot; Worldwide shipping</p>
+  </div>
+  <button class="btn-dk" onclick="openOrder('')">Start Customizing &rarr;</button>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft">
+    <div>
+      <a href="#" class="fl">Sajda<span> Studio</span></a>
+      <p class="foot-about">Bespoke personalised prayer mats, handcrafted to order. Muslim-owned &middot; Minneapolis, MN &middot; Est. 2024.</p>
+    </div>
+    <div class="fc">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="#collections">Prayer Mats</a></li>
+        <li><a href="#bundles">Duo Sets</a></li>
+        <li><a href="#bundles">Family Sets</a></li>
+        <li><a href="#bundles">Mat + Tesbih</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Gifts For</h4>
+      <ul>
+        <li><a href="#occasions">Eid &amp; Ramadan</a></li>
+        <li><a href="#occasions">Nikah</a></li>
+        <li><a href="#occasions">New Baby</a></li>
+        <li><a href="#occasions">Hajj &amp; Umrah</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Info</h4>
+      <ul>
+        <li><a href="#faq">FAQs</a></li>
+        <li><a href="#faq">Shipping</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#faq">Returns</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-social">
+    <a href="https://tiktok.com/@sajdastudio" target="_blank" rel="noopener" class="soc-link">TikTok</a>
+    <a href="https://instagram.com/sajdastudio" target="_blank" rel="noopener" class="soc-link">Instagram</a>
+    <a href="mailto:sajadastudios@gmail.com" class="soc-link">Email Us</a>
+  </div>
+  <div class="fb">
+    <p>&copy; 2025 Sajda Studio. All rights reserved. Muslim-owned &middot; Minneapolis, MN</p>
+    <div class="pay">
+      <div class="py">Visa</div>
+      <div class="py">Mastercard</div>
+      <div class="py">Amex</div>
+      <div class="py">Apple Pay</div>
+      <div class="py">Google Pay</div>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY CTA (mobile) -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-cta-txt">From <span>$40</span> &middot; +$7 name &middot; +$3 symbol</div>
+  <button class="sticky-cta-btn" onclick="openOrder('')">Design Your Mat &rarr;</button>
+</div>
+
+<!-- ORDER MODAL -->
+<div id="orderModal" role="dialog" aria-modal="true" aria-label="Design Your Mat">
+  <div class="om-bg" onclick="closeOrder()"></div>
+  <div class="om-box">
+    <div class="om-hd">
+      <h2>Design Your <em>Mat</em></h2>
+      <button class="om-close" onclick="closeOrder()" aria-label="Close">&times;</button>
+    </div>
+    <div class="om-prog">
+      <div class="prog-dot active" id="pd1">1</div>
+      <div class="prog-line"></div>
+      <div class="prog-dot" id="pd2">2</div>
+      <div class="prog-line"></div>
+      <div class="prog-dot" id="pd3">3</div>
+    </div>
+    <div id="oFormInner">
+      <div class="om-body">
+        <!-- STEP 1 -->
+        <div class="ostep active" id="ostep1">
+          <div class="ostep-title">Choose your <em>product &amp; color</em></div>
+          <div class="ofield">
+            <label>Product</label>
+            <select class="oselect" id="oBundle">
+              <option value="">&#8212; Select a product &#8212;</option>
+              <optgroup label="Single Mats">
+                <option value="single">Single Personalised Mat &mdash; $40</option>
+              </optgroup>
+              <optgroup label="Sets &amp; Bundles">
+                <option value="duo">Duo Set (2 Mats) &mdash; $80</option>
+                <option value="family">Family Set (4 Mats) &mdash; $160</option>
+                <option value="tesbih">Mat + Tesbih Bundle &mdash; $50</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="ofield">
+            <label>Mat Color</label>
+            <div class="mcols">
+              <div><div class="mcol on" data-val="Black" style="background:radial-gradient(circle at 35% 35%,#2a2a2a,#080808);" onclick="selectModalColor(this)"></div><span class="mcol-lbl">Black</span></div>
+              <div><div class="mcol" data-val="Grey" style="background:radial-gradient(circle at 35% 35%,#9a9a9a,#555555);" onclick="selectModalColor(this)"></div><span class="mcol-lbl">Grey</span></div>
+              <div><div class="mcol" data-val="Green" style="background:radial-gradient(circle at 35% 35%,#2aaa80,#0d5c42);" onclick="selectModalColor(this)"></div><span class="mcol-lbl">Green</span></div>
+              <div><div class="mcol" data-val="Blue" style="background:radial-gradient(circle at 35% 35%,#2244cc,#0a1866);" onclick="selectModalColor(this)"></div><span class="mcol-lbl">Blue</span></div>
+              <div><div class="mcol" data-val="Pink" style="background:radial-gradient(circle at 35% 35%,#c47a8a,#7a3a48);" onclick="selectModalColor(this)"></div><span class="mcol-lbl">Pink</span></div>
+              <div><div class="mcol" data-val="Red" style="background:radial-gradient(circle at 35% 35%,#e85060,#6a0a14);" onclick="selectModalColor(this)"></div><span class="mcol-lbl">Red</span></div>
+            </div>
+          </div>
+          <div class="ofield">
+            <label>Occasion <span style="color:var(--muted);font-size:.8em;">(optional)</span></label>
+            <select class="oselect" id="oOccasion">
+              <option value="">&#8212; Select occasion &#8212;</option>
+              <option>Eid Gift</option>
+              <option>Nikah / Wedding</option>
+              <option>Ramadan Gift</option>
+              <option>New Baby / Aqiqah</option>
+              <option>Hajj / Umrah</option>
+              <option>Birthday</option>
+              <option>Personal Use</option>
+            </select>
+          </div>
+        </div>
+        <!-- STEP 2 -->
+        <div class="ostep" id="ostep2">
+          <div class="ostep-title">Add your <em>personalization</em></div>
+          <div id="nameFields">
+            <div class="ofield">
+              <label>Name to embroider <span style="color:var(--muted);font-size:.8em;">(+$7)</span></label>
+              <input class="name-inp oinput" type="text" placeholder="e.g. Ahmed" maxlength="30"/>
+              <div class="ofield-hint">Arabic or Latin script &middot; max 30 characters &middot; leave blank to skip</div>
+            </div>
+          </div>
+          <div class="ofield">
+            <label>Add a Symbol <span style="color:var(--muted);font-size:.8em;">(+$3 per mat, optional)</span></label>
+            <div id="symbolRows"></div>
+          </div>
+          <div class="ofield">
+            <label>Thread Color <span style="color:var(--muted);font-size:.8em;">(choose your embroidery thread)</span></label>
+            <select class="oselect" id="oThread">
+              <option>Gold</option>
+              <option>White</option>
+              <option>Black</option>
+            </select>
+            <div class="ofield-hint">&#9656; Gold thread catches light beautifully on dark mats &middot; White and Black suit lighter colours</div>
+          </div>
+        </div>
+        <!-- STEP 3 -->
+        <div class="ostep" id="ostep3">
+          <div class="ostep-title">Your <em>details</em></div>
+          <div class="osummary" id="oSummary">
+            <h4>Order Summary</h4>
+            <div class="osum-row"><span class="osum-lbl">Product</span><span class="osum-val" id="sProduct">&#8212;</span></div>
+            <div class="osum-row"><span class="osum-lbl">Color</span><span class="osum-val" id="sColor">&#8212;</span></div>
+            <div class="osum-row"><span class="osum-lbl">Names</span><span class="osum-val" id="sNames">&#8212;</span></div>
+            <div class="osum-row"><span class="osum-lbl">Name embroidery</span><span class="osum-val" id="sPersonal">&#8212;</span></div>
+            <div class="osum-row" id="sSymbolRow" style="display:none;"><span class="osum-lbl">Symbols</span><span class="osum-val" id="sSymbol">&#8212;</span></div>
+            <div class="osum-row"><span class="osum-lbl">Gift Box</span><span class="osum-val" style="color:var(--green);">&#10003; Free</span></div>
+            <div class="osum-row"><span class="osum-lbl" style="color:var(--cream);font-weight:500;">Total</span><span class="osum-val osum-total" id="sTotal">&#8212;</span></div>
+          </div>
+          <div class="orow">
+            <div class="ofield"><label>Your Name</label><input class="oinput" type="text" id="oCustomerName" placeholder="Full name"/></div>
+            <div class="ofield"><label>Email Address</label><input class="oinput" type="email" id="oEmail" placeholder="you@email.com"/></div>
+          </div>
+          <div class="ofield">
+            <label>WhatsApp / Phone <span style="color:var(--muted);font-size:.8em;">(optional)</span></label>
+            <input class="oinput" type="tel" id="oPhone" placeholder="+1 555 000 0000"/>
+          </div>
+          <div class="ofield">
+            <label>Shipping Address</label>
+            <textarea class="otextarea" id="oAddress" placeholder="Street, City, State/Province, ZIP, Country" style="height:66px;"></textarea>
+          </div>
+          <div class="ofield">
+            <label>Special Requests <span style="color:var(--muted);font-size:.8em;">(optional)</span></label>
+            <textarea class="otextarea" id="oNotes" placeholder="Gift message, special instructions..."></textarea>
+          </div>
+          <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.14);padding:.9rem;font-size:.82rem;color:var(--muted);line-height:1.72;margin-top:.4rem;">
+            &#10022; We will confirm your order by email within 24 hours and send a secure payment link. Ships within 2&ndash;3 weeks after payment.
+          </div>
+        </div>
+      </div>
+      <div id="oCheckoutErr" style="display:none;padding:.7rem 1.8rem;font-size:.8rem;color:#e07070;background:rgba(224,85,85,.07);border-top:1px solid rgba(224,85,85,.18);line-height:1.6;"></div>
+      <div class="om-foot">
+        <button type="button" class="obtn obtn-prev" id="oPrev" onclick="prevStep()" style="display:none;">&larr; Back</button>
+        <button type="button" class="obtn obtn-next" id="oNext" onclick="nextStep()">Next &rarr;</button>
+        <button type="button" class="obtn obtn-submit" id="oSubmit" style="display:none;" onclick="submitOrder()">Pay Now &rarr;</button>
+      </div>
+    </div>
+    <div id="oConfirm">
+      <div style="width:52px;height:52px;border-radius:50%;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;font-size:1.4rem;color:var(--gold);">&#10003;</div>
+      <h3>Order <em>Received</em></h3>
+      <p>Jazakallah khayran! We will confirm everything by email within 24 hours and send your payment link. Your mat will be handcrafted with care.</p>
+      <div class="oconf-ref" id="oConfRef"></div>
+      <div style="margin-top:1.6rem;display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center;">
+        <button type="button" class="obtn obtn-next" onclick="closeOrder()">Close</button>
+        <a href="mailto:sajadastudios@gmail.com" class="obtn obtn-prev" style="display:inline-block;text-align:center;">Email Us</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── HAMBURGER MENU ────────────────────────────────────
+function toggleMenu() {
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('mobMenu').classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('mobMenu').classList.remove('open');
+}
+
+// ── SCROLL EFFECTS ────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function() {
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      var href = this.getAttribute('href');
+      if (href === '#') return;
+      var target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Fade-in on scroll
+  var fadeEls = document.querySelectorAll('.stit,.stag,.ssub,.col-c,.bc,.tc,.og,.faq-item,.about-p,.about-val,.stat');
+  fadeEls.forEach(function(el) { el.classList.add('fade-in'); });
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  fadeEls.forEach(function(el) { observer.observe(el); });
+
+  // Sticky CTA show/hide on scroll (mobile only hides after hero)
+  var hero = document.querySelector('.hero');
+  var sticky = document.getElementById('stickyCta');
+  var io2 = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (window.innerWidth <= 600) {
+        sticky.style.display = e.isIntersecting ? 'none' : 'flex';
+      }
+    });
+  }, { threshold: 0.1 });
+  io2.observe(hero);
+});
+
+// ── COUNTDOWN TIMER ───────────────────────────────────
+(function() {
+  var target = new Date(Date.now() + (3 * 86400 + 8 * 3600) * 1000);
+  function tick() {
+    var diff = target - Date.now();
+    if (diff <= 0) { return; }
+    document.getElementById('cd-d').textContent = String(Math.floor(diff / 86400000)).padStart(2, '0');
+    document.getElementById('cd-h').textContent = String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0');
+    document.getElementById('cd-m').textContent = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+    document.getElementById('cd-s').textContent = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+
+// ── CONTACT FORM ──────────────────────────────────────
+function submitContact() {
+  var name  = document.getElementById('cfName').value.trim();
+  var email = document.getElementById('cfEmail').value.trim();
+  var msg   = document.getElementById('cfMsg').value.trim();
+  var valid = true;
+
+  document.getElementById('cfNameErr').textContent  = '';
+  document.getElementById('cfEmailErr').textContent = '';
+  document.getElementById('cfMsgErr').textContent   = '';
+  document.getElementById('cfSuccess').style.display = 'none';
+
+  if (!name)  { document.getElementById('cfNameErr').textContent  = 'Please enter your name.'; valid = false; }
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    document.getElementById('cfEmailErr').textContent = 'Please enter a valid email address.'; valid = false;
+  }
+  if (!msg)   { document.getElementById('cfMsgErr').textContent   = 'Please enter a message.'; valid = false; }
+  if (!valid) return;
+
+  var sub  = encodeURIComponent('Sajda Studio Enquiry from ' + name);
+  var body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + msg);
+  window.location.href = 'mailto:sajadastudios@gmail.com?subject=' + sub + '&body=' + body;
+
+  document.getElementById('cfSuccess').style.display = 'block';
+  document.getElementById('cfName').value  = '';
+  document.getElementById('cfEmail').value = '';
+  document.getElementById('cfMsg').value   = '';
+}
+
+// ── FAQ ACCORDION ─────────────────────────────────────
+function toggleFaq(btn) {
+  var item   = btn.parentElement;
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(el) { el.classList.remove('open'); });
+  if (!isOpen) item.classList.add('open');
+}
+
+// ── MAT COLOUR PREVIEW ────────────────────────────────
+function setCol(c1, c2, st, ta, ev) {
+  document.getElementById('ps1').setAttribute('stop-color', c1);
+  document.getElementById('ps2').setAttribute('stop-color', c2);
+  ['pF1','pF3','pAO','pAI'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.setAttribute('stroke', st);
+  });
+  document.getElementById('pDia').setAttribute('fill', ta);
+  document.getElementById('pName').setAttribute('fill', st);
+  document.querySelectorAll('.sw').forEach(function(s) { s.classList.remove('on'); });
+  ev.currentTarget.classList.add('on');
+  // Sync modal color picker
+  var title = ev.currentTarget.getAttribute('title');
+  document.querySelectorAll('.mcol').forEach(function(c) { c.classList.remove('on'); });
+  document.querySelectorAll('.mcol[data-val="' + title + '"]').forEach(function(c) { c.classList.add('on'); });
+}
+function setColBlack(ev) {
+  document.getElementById('ps1').setAttribute('stop-color', '#0A0A0A');
+  document.getElementById('ps2').setAttribute('stop-color', '#060606');
+  ['pF1','pF3','pAO','pAI'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.setAttribute('stroke', '#C8C0A8');
+  });
+  document.getElementById('pDia').setAttribute('fill', '#C8C0A8');
+  document.getElementById('pName').setAttribute('fill', '#C8C0A8');
+  document.querySelectorAll('.sw').forEach(function(s) { s.classList.remove('on'); });
+  ev.currentTarget.classList.add('on');
+  // Sync modal color picker
+  document.querySelectorAll('.mcol').forEach(function(c) { c.classList.remove('on'); });
+  document.querySelectorAll('.mcol[data-val="Black"]').forEach(function(c) { c.classList.add('on'); });
+}
+
+// ── ORDER MODAL ───────────────────────────────────────
+var currentStep = 1;
+var basePrices  = { 'single': 40, 'duo': 80, 'family': 160, 'tesbih': 50 };
+var matCounts   = { 'single': 1,  'duo': 2,  'family': 4,   'tesbih': 1  };
+var bundleNames = {
+  'single':       'Single Mat',
+  'duo':          'Duo Set (2 mats)',
+  'family':       'Family Set (4 mats)',
+  'tesbih':       'Mat + Tesbih'
+};
+
+function openOrder(preselect) {
+  var modal = document.getElementById('orderModal');
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  if (preselect) {
+    var sel = document.getElementById('oBundle');
+    for (var i = 0; i < sel.options.length; i++) {
+      if (sel.options[i].value === preselect) { sel.selectedIndex = i; break; }
+    }
+  }
+  // Ensure a color is always pre-selected (Black default)
+  var anyOn = document.querySelector('.mcol.on');
+  if (!anyOn) {
+    var firstMcol = document.querySelector('.mcol[data-val="Black"]');
+    if (firstMcol) firstMcol.classList.add('on');
+  }
+  document.getElementById('oFormInner').style.display = '';
+  document.getElementById('oConfirm').style.display   = 'none';
+  showStep(1);
+}
+
+function closeOrder() {
+  document.getElementById('orderModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeOrder();
+});
+
+function showStep(n) {
+  currentStep = n;
+  document.querySelectorAll('.ostep').forEach(function(s) { s.classList.remove('active'); });
+  document.getElementById('ostep' + n).classList.add('active');
+  ['pd1','pd2','pd3'].forEach(function(id, i) {
+    var d = document.getElementById(id);
+    d.classList.toggle('done',   i < n - 1);
+    d.classList.toggle('active', i === n - 1);
+  });
+  document.getElementById('oPrev').style.display   = n === 1 ? 'none' : 'block';
+  document.getElementById('oNext').style.display   = n < 3   ? 'block' : 'none';
+  document.getElementById('oSubmit').style.display = n === 3 ? 'block' : 'none';
+  if (n === 3) fillSummary();
+  // Scroll modal body to top on step change
+  var box = document.querySelector('.om-box');
+  if (box) box.scrollTop = 0;
+}
+
+function nextStep() {
+  if (currentStep === 1 && !document.getElementById('oBundle').value) {
+    document.getElementById('oBundle').style.borderColor = '#e05555';
+    setTimeout(function() { document.getElementById('oBundle').style.borderColor = ''; }, 1800);
+    return;
+  }
+  if (currentStep === 1) {
+    var bundle = document.getElementById('oBundle').value;
+    updateNameFields(bundle);
+    updateSymbolRows(bundle);
+  }
+  if (currentStep < 3) showStep(currentStep + 1);
+}
+
+function prevStep() {
+  if (currentStep > 1) showStep(currentStep - 1);
+}
+
+function updateNameFields(bundle) {
+  var wrap  = document.getElementById('nameFields');
+  var count = matCounts[bundle] || 1;
+  wrap.innerHTML = '';
+  for (var i = 0; i < count; i++) {
+    var lbl = count === 1 ? 'Name to embroider' : 'Name for Mat ' + (i + 1);
+    wrap.innerHTML +=
+      '<div class="ofield">' +
+        '<label>' + lbl + ' <span style="color:var(--muted);font-size:.8em;">(+$7)</span></label>' +
+        '<input class="name-inp oinput" type="text" placeholder="e.g. Ahmed" maxlength="30"/>' +
+        '<div class="ofield-hint">Arabic or Latin &middot; max 30 chars &middot; leave blank to skip</div>' +
+      '</div>';
+  }
+}
+
+function updateSymbolRows(bundle) {
+  var count = matCounts[bundle] || 1;
+  var wrap  = document.getElementById('symbolRows');
+  wrap.innerHTML = '';
+  for (var i = 0; i < count; i++) {
+    var label = count > 1 ? 'Mat ' + (i + 1) : 'Your mat';
+    wrap.innerHTML +=
+      '<div style="margin-bottom:.9rem;">' +
+        '<div style="font-family:Cinzel,serif;font-size:.52rem;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;margin-bottom:.4rem;">' + label + '</div>' +
+        '<div class="symbol-opts">' +
+          '<div class="sym-btn picked" data-mat="' + i + '" data-sym="none" onclick="pickSymbol(this)"><span class="sym-icon">&mdash;</span><span class="sym-lbl">None</span></div>' +
+          '<div class="sym-btn" data-mat="' + i + '" data-sym="heart" onclick="pickSymbol(this)"><span class="sym-icon">&#9829;</span><span class="sym-lbl">Heart +$3</span></div>' +
+          '<div class="sym-btn" data-mat="' + i + '" data-sym="moon" onclick="pickSymbol(this)"><span class="sym-icon">&#9790;</span><span class="sym-lbl">Moon +$3</span></div>' +
+        '</div>' +
+      '</div>';
+  }
+}
+
+function pickSymbol(el) {
+  var matIdx = el.getAttribute('data-mat');
+  document.querySelectorAll('.sym-btn[data-mat="' + matIdx + '"]').forEach(function(b) {
+    b.classList.remove('picked');
+  });
+  el.classList.add('picked');
+}
+
+function selectModalColor(el) {
+  document.querySelectorAll('.mcol').forEach(function(c) { c.classList.remove('on'); });
+  el.classList.add('on');
+  // Sync preview mat (if visible on page)
+  var colorMap = {
+    'Black': { c1:'#0A0A0A', c2:'#060606', st:'#C8C0A8', ta:'#C8C0A8' },
+    'Grey':  { c1:'#888888', c2:'#444444', st:'#bbbbbb', ta:'#999999' },
+    'Green': { c1:'#0d7a5a', c2:'#094d38', st:'#2aaa80', ta:'#1a8866' },
+    'Blue':  { c1:'#1a2fa8', c2:'#0a1866', st:'#4466dd', ta:'#2244cc' },
+    'Pink':  { c1:'#a05060', c2:'#6a2838', st:'#c47a8a', ta:'#b06070' },
+    'Red':   { c1:'#c01a2a', c2:'#6a0a14', st:'#e85060', ta:'#e85060' }
+  };
+  var val = el.getAttribute('data-val');
+  var cm  = colorMap[val];
+  if (!cm) return;
+  var ps1 = document.getElementById('ps1');
+  var ps2 = document.getElementById('ps2');
+  if (ps1) ps1.setAttribute('stop-color', cm.c1);
+  if (ps2) ps2.setAttribute('stop-color', cm.c2);
+  ['pF1','pF3','pAO','pAI'].forEach(function(id) {
+    var el2 = document.getElementById(id);
+    if (el2) el2.setAttribute('stroke', cm.st);
+  });
+  var pDia  = document.getElementById('pDia');
+  var pName = document.getElementById('pName');
+  if (pDia)  pDia.setAttribute('fill', cm.ta);
+  if (pName) pName.setAttribute('fill', cm.st);
+  // Also sync the preview swatches on the page
+  document.querySelectorAll('.sw').forEach(function(s) { s.classList.remove('on'); });
+  var titleToSync = { 'Black':'Black','Grey':'Grey','Green':'Green','Blue':'Blue','Pink':'Pink','Red':'Red' };
+  document.querySelectorAll('.sw[title="' + titleToSync[val] + '"]').forEach(function(s) { s.classList.add('on'); });
+}
+
+function getSelectedSymbols() {
+  var result = [];
+  document.querySelectorAll('#symbolRows > div').forEach(function(matDiv) {
+    var picked = matDiv.querySelector('.sym-btn.picked');
+    result.push(picked ? picked.getAttribute('data-sym') : 'none');
+  });
+  return result;
+}
+
+function fillSummary() {
+  var b       = document.getElementById('oBundle').value;
+  var names   = Array.from(document.querySelectorAll('.name-inp')).map(function(n) { return n.value.trim(); }).filter(Boolean);
+  var symbols = getSelectedSymbols();
+  var symCount= symbols.filter(function(s) { return s !== 'none'; }).length;
+  var nameCost= names.length * 7;
+  var symCost = symCount * 3;
+  var base    = basePrices[b] || 0;
+  var total   = (base + nameCost + symCost).toFixed(2);
+  var colorEl = document.querySelector('.mcol.on');
+
+  document.getElementById('sProduct').textContent  = bundleNames[b] || '&mdash;';
+  document.getElementById('sColor').textContent    = colorEl ? colorEl.getAttribute('data-val') : '&mdash;';
+  document.getElementById('sNames').textContent    = names.join(', ') || 'None';
+  document.getElementById('sPersonal').textContent = names.length ? '$' + nameCost.toFixed(2) + ' (' + names.length + ' \xd7 $7)' : 'None';
+
+  if (symCount > 0) {
+    var symList = [];
+    symbols.forEach(function(s, i) {
+      if (s !== 'none') symList.push('Mat ' + (i + 1) + ': ' + (s === 'heart' ? 'Heart &#9829;' : 'Moon &#9790;'));
+    });
+    document.getElementById('sSymbol').innerHTML   = '$' + symCost.toFixed(2) + ' &mdash; ' + symList.join(', ');
+    document.getElementById('sSymbolRow').style.display = 'flex';
+  } else {
+    document.getElementById('sSymbolRow').style.display = 'none';
+  }
+
+  document.getElementById('sTotal').textContent = base ? '$' + total : '&mdash;';
+}
+
+// ── STRIPE CONFIG ─────────────────────────────────────
+var STRIPE_PK = 'pk_test_51TEblHEfCdzLL0d8DS3AmBj9hWcRN8EBIpf8fv2xID0vzxJURKmb44Fmi8jCFgGH1Hlt16ERuRebPYzRtp3g0lHa00Bt4oQflt';
+var stripePrices = {
+  'single':       'price_1TEbu7EfCdzLL0d8AtQ31yu9',
+  'duo':          'price_1TEbupEfCdzLL0d8PUQa7U41',
+  'family':       'price_1TEbxeEfCdzLL0d8FHJrTKfr',
+  'tesbih':       'price_1TEbyCEfCdzLL0d8z3a2j39N'
+};
+
+function submitOrder() {
+  var name    = document.getElementById('oCustomerName').value.trim();
+  var email   = document.getElementById('oEmail').value.trim();
+  var address = document.getElementById('oAddress').value.trim();
+
+  if (!name) {
+    document.getElementById('oCustomerName').style.borderColor = '#e05555';
+    document.getElementById('oCustomerName').focus();
+    setTimeout(function(){ document.getElementById('oCustomerName').style.borderColor = ''; }, 2000);
+    return;
+  }
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    document.getElementById('oEmail').style.borderColor = '#e05555';
+    document.getElementById('oEmail').focus();
+    setTimeout(function(){ document.getElementById('oEmail').style.borderColor = ''; }, 2000);
+    return;
+  }
+  if (!address) {
+    document.getElementById('oAddress').style.borderColor = '#e05555';
+    document.getElementById('oAddress').focus();
+    setTimeout(function(){ document.getElementById('oAddress').style.borderColor = ''; }, 2000);
+    return;
+  }
+
+  var b       = document.getElementById('oBundle').value;
+  var priceId = stripePrices[b];
+  if (!priceId) { alert('Please go back and select a product.'); return; }
+
+  var colorEl = document.querySelector('.mcol.on');
+  var color   = colorEl ? colorEl.getAttribute('data-val') : '';
+  var names   = Array.from(document.querySelectorAll('.name-inp')).map(function(n) { return n.value.trim(); }).filter(Boolean);
+  var syms    = getSelectedSymbols().map(function(s,i) { return s !== 'none' ? 'Mat'+(i+1)+':'+s : ''; }).filter(Boolean);
+  var thread  = document.getElementById('oThread').value;
+  var phone   = document.getElementById('oPhone').value.trim();
+  var notes   = document.getElementById('oNotes').value.trim();
+  var occasion= document.getElementById('oOccasion').value;
+
+  // Encode all order details into metadata string (max 500 chars for Stripe)
+  var orderRef = [
+    'color:' + color,
+    names.length   ? 'names:'   + names.join(',')  : '',
+    syms.length    ? 'syms:'    + syms.join(',')    : '',
+    'thread:'      + thread,
+    phone          ? 'phone:'   + phone              : '',
+    address        ? 'addr:'    + address            : '',
+    occasion       ? 'occ:'     + occasion           : '',
+    notes          ? 'notes:'   + notes              : ''
+  ].filter(Boolean).join('|').substring(0, 500);
+
+  // Disable button and show loading state
+  var btn = document.getElementById('oSubmit');
+  var originalText = btn.textContent;
+  btn.textContent = 'Redirecting to payment…';
+  btn.disabled = true;
+
+  fetch('/.netlify/functions/create-checkout', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      priceId:    priceId,
+      email:      email,
+      orderRef:   orderRef,
+      customerName: name,
+      successUrl: window.location.origin + window.location.pathname + '?order=success',
+      cancelUrl:  window.location.origin + window.location.pathname + '?order=cancelled'
+    })
+  })
+  .then(function(r) {
+    if (!r.ok) return r.json().then(function(d) { throw new Error(d.error || 'Server error ' + r.status); });
+    return r.json();
+  })
+  .then(function(data) {
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      throw new Error(data.error || 'No checkout URL returned.');
+    }
+  })
+  .catch(function(err) {
+    console.error('Checkout error:', err);
+    btn.textContent = originalText;
+    btn.disabled = false;
+    // Show inline error instead of alert
+    var errDiv = document.getElementById('oCheckoutErr');
+    if (errDiv) {
+      errDiv.textContent = 'Payment could not start: ' + err.message + '. Email sajadastudios@gmail.com to order directly.';
+      errDiv.style.display = 'block';
+    }
+  });
+}
+
+// Handle Stripe return (success or cancelled)
+(function handleStripeReturn() {
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('order') === 'success') {
+    // Clean URL
+    history.replaceState({}, '', window.location.pathname);
+    // Open modal on confirm screen
+    document.addEventListener('DOMContentLoaded', function() {
+      openOrder('');
+      document.getElementById('oFormInner').style.display = 'none';
+      document.getElementById('oConfirm').style.display   = 'flex';
+      document.getElementById('oConfRef').textContent     = 'Payment confirmed. Check your email for order details.';
+    });
+  }
+  if (params.get('order') === 'cancelled') {
+    history.replaceState({}, '', window.location.pathname);
+  }
+})();
+
+
+</script>
+</body>
+</html>
